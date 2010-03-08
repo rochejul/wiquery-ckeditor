@@ -19,14 +19,6 @@
 		<jdk.version>1.0.1-SNAPSHOT</jdk.version>
 	</properties>
 
-	<distributionManagement>
-		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>wiquery-maven-repo</id>
-			<url>svn:https://wiquery.googlecode.com/svn/repo</url>
-		</repository>
-	</distributionManagement>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -91,5 +83,21 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<profiles>
+		<profile>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>wiquery repository</id>
+					<name>wiQuery repository</name>
+					<url>http://wiquery.googlecode.com/svn/repo/</url>
+		  			<layout>default</layout>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
 
 </project>
